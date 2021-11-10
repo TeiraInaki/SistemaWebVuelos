@@ -1,0 +1,72 @@
+﻿@model SistemaWebVuelos.Models.Vuelo
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+@using (Html.BeginForm("Delete", "Vuelo", FormMethod.Post))
+{
+
+
+<fieldset>
+    <legend>Eliminar Vuelo</legend>
+    <div class="detalles">
+        <div class="display-label">
+            @* Nombre de la Columna *@
+            @Html.DisplayNameFor(model => model.Id)
+        </div>
+        <div class="display-text">
+            @* Valor de la Columna *@
+            @Html.DisplayFor(model => model.Id)
+        </div>
+    </div>
+    <div class="detalles">
+        <div class="display-label">
+            @* Nombre de la Columna *@
+            @Html.DisplayNameFor(model => model.Fecha)
+        </div>
+        <div class="display-text">
+            @* Valor de la Columna *@
+            @Html.DisplayFor(model => model.Fecha)
+        </div>
+    </div>
+    <div class="detalles">
+        <div class="display-label">
+            @* Nombre de la Columna *@
+            @Html.DisplayNameFor(model => model.Destino)
+        </div>
+        <div class="display-text">
+            @* Valor de la Columna *@
+            @Html.DisplayFor(model => model.Destino)
+        </div>
+    </div>
+    <div class="detalles">
+        <div class="display-label">
+            @* Nombre de la Columna *@
+            @Html.DisplayNameFor(model => model.Origen)
+        </div>
+        <div class="display-text">
+            @* Valor de la Columna *@
+            @Html.DisplayFor(model => model.Origen)
+        </div>
+    </div>
+    <div class="detalles">
+        <div class="display-label">
+            @* Nombre de la Columna *@
+            @Html.DisplayNameFor(model => model.Matricula)
+        </div>
+        <div class="display-text">
+            @* Valor de la Columna *@
+            @Html.DisplayFor(model => model.Matricula)
+        </div>
+    </div>
+    <div class="detalles">
+        <p>
+            <input type="submit" value="Delete" />
+        </p>
+    </div>
+</fieldset>
+}
+<p>
+    @Html.ActionLink("Volver a Vuelos", "Index", "Vuelo")
+</p>

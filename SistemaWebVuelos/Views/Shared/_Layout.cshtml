@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/styles.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="total">
+        <header>
+            <h1>SISTEMA VUELOS</h1>
+        </header>
+
+        <nav>
+            @Html.ActionLink("Home", "Index", "Home")
+            @Html.ActionLink("Vuelos", "Index", "Vuelo")
+        </nav>
+
+        <main>
+            <sidebar>
+                @if (IsSectionDefined("izq"))
+                {
+                    @RenderSection("izq")
+                }
+                else
+                {
+                <img src="https://image.shutterstock.com/image-photo/passenger-airliner-above-clouds-260nw-393178228.jpg" alt="Alternate Text" />
+                }
+            </sidebar>
+
+            <content>
+                @RenderBody()
+            </content>
+        </main>
+
+        <footer>
+            <p>Info@vuelo.com</p>
+        </footer>
+    </div>
+    
+</body>
+</html>

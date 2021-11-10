@@ -1,0 +1,49 @@
+﻿@model IEnumerable<SistemaWebVuelos.Models.Vuelo>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<p>@Html.ActionLink("Create New", "Create", "Vuelo")</p>
+
+<p>Buscar por especialidad</p>
+
+@*@using (Html.BeginForm("IndexPorDestino", "Vuelo", FormMethod.Get))
+{
+    @Html.TextBox("destino")
+
+    <input type="submit" value="Get" />
+}*@
+
+<table>
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.Id)</th>
+        <th>@Html.DisplayNameFor(model => model.Fecha)</th>
+        <th>@Html.DisplayNameFor(model => model.Destino)</th>
+        <th>@Html.DisplayNameFor(model => model.Origen)</th>
+        <th>@Html.DisplayNameFor(model => model.Matricula)</th>
+        <th>Detail</th>
+        <th>Delete</th>
+        <th>Edit</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>@Html.DisplayFor(modelItem => item.Id)</td>
+    <td>@Html.DisplayFor(modelItem => item.Fecha)</td>
+    <td>@Html.DisplayFor(modelItem => item.Destino)</td>
+    <td>@Html.DisplayFor(modelItem => item.Origen)</td>
+    <td>@Html.DisplayFor(modelItem => item.Matricula)</td>
+    <td>
+        @Html.ActionLink("Detail", "Detail", new { id = item.Id })
+    </td>
+    <td>
+        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.Id })
+    </td>
+</tr>
+    }
+</table>
+
